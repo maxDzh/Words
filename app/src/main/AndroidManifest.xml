@@ -16,7 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddWord" android:label="Add Word"></activity>
+        <activity android:name=".AddWord"
+            android:label="Add Word">
+
+        </activity>
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

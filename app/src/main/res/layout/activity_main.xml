@@ -1,54 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#6ab344"
+    android:orientation="vertical"
     tools:context="com.mylab.mdzh.words.MainActivity">
 
     <Button
         android:id="@+id/add"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:text="+"
-        android:filterTouchesWhenObscured="true"
         android:layout_gravity="right"
-        android:textSize="35dp"
-        android:padding="0dp"
+        android:background="#6ab344"
+        android:filterTouchesWhenObscured="true"
         android:gravity="center_vertical"
+        android:onClick="AddWord"
+        android:padding="0dp"
+        android:stateListAnimator="@null"
+        android:text="+"
         android:textAlignment="center"
         android:textColor="#fff"
-        android:background="#6ab344"
-        android:stateListAnimator="@null"
-        android:onClick="AddWord"
-        />
+        android:textSize="35dp" />
 
     <TextView
         android:id="@+id/MainWord"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_marginBottom="20dp"
-        android:textSize="35dp"
-        android:textColor="#fff"
-        android:textStyle="bold"
+        android:gravity="center"
         android:shadowColor="#111"
         android:shadowDx="2"
         android:shadowDy="2"
         android:shadowRadius="2"
-        android:text="Main word" />
+        android:text="Main word"
+        android:textColor="#fff"
+        android:textSize="35dp"
+        android:textStyle="bold" />
 
     <RadioButton
         android:id="@+id/radioV1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#fff"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="10dp"
-        android:textColorLink="#111"
-        android:text="RadioButton" />
+        android:text="RadioButton"
+        android:textColor="#fff"
+        android:textColorLink="#111" />
 
     <RadioButton
         android:id="@+id/radioV2"
@@ -56,8 +54,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="10dp"
-        android:textColor="#ddd"
-        android:text="RadioButton" />
+        android:text="RadioButton"
+        android:textColor="#fff" />
 
     <RadioButton
         android:id="@+id/radioV3"
@@ -65,8 +63,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="10dp"
-        android:textColor="@color/radio_color"
-        android:text="RadioButton" />
+        android:text="RadioButton"
+        android:textColor="#fff" />
 
     <RadioButton
         android:id="@+id/radioV4"
@@ -74,62 +72,92 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="10dp"
-        android:textColor="@color/radio_color"
-        android:text="RadioButton" />
+        android:text="RadioButton"
+        android:textColor="#fff" />
+
+    <RadioButton
+        android:id="@+id/radioV5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:text="RadioButton"
+        android:textColor="#fff"
+        />
+
 
     <Button
         android:id="@+id/button_next"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="Next"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="5dp"
         android:layout_marginLeft="5dp"
-        android:filterTouchesWhenObscured="true" />
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="30dp"
+        android:filterTouchesWhenObscured="true"
+        android:onClick="UpdateWord"
+        android:text="Next" />
+
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity = "bottom">
+        android:layout_gravity="bottom">
 
         <Button
             android:id="@+id/button_delete"
             android:layout_width="150dp"
             android:layout_height="60dp"
-            android:text="Delete"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:filterTouchesWhenObscured="true"
+            android:layout_alignParentStart="true"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="5dp"
-            android:textSize="20dp"
-            android:padding="0dp"
+            android:background="#6ab344"
+            android:filterTouchesWhenObscured="true"
             android:gravity="center_vertical"
+            android:padding="0dp"
+            android:text="Delete"
             android:textAlignment="center"
             android:textColor="#fff"
-            android:background="#6ab344"/>
+            android:textSize="20dp" />
 
         <Button
             android:id="@+id/button_know"
             android:layout_width="150dp"
             android:layout_height="60dp"
-            android:text="Know it"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:filterTouchesWhenObscured="true"
             android:layout_marginBottom="5dp"
             android:layout_marginRight="5dp"
-            android:textSize="20dp"
-            android:padding="0dp"
+            android:background="#6ab344"
+            android:filterTouchesWhenObscured="true"
             android:gravity="center_vertical"
+            android:padding="0dp"
+            android:text="Know it"
             android:textAlignment="center"
             android:textColor="#fff"
-            android:background="#6ab344"/>
+            android:textSize="20dp" />
 
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/EmptyView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:text="No Connection."/>
+
+    </RelativeLayout>
 
 
 </LinearLayout>
+
+

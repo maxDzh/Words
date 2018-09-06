@@ -1,9 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#6ab344"
+    android:orientation="vertical"
     tools:context="com.mylab.mdzh.words.AddWord">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/New_word"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:shadowColor="#111"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:text="New word"
+        android:textColor="#fff"
+        android:textSize="35dp"
+        android:textStyle="" />
+
+    <EditText
+        android:id="@+id/word"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:padding="5dp"
+        android:hint="the word"
+        android:background="#ddd"
+        android:layout_marginBottom="10dp"
+        />
+
+    <EditText
+        android:id="@+id/translation"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:padding="5dp"
+        android:hint="translation"
+        android:background="#ddd"
+        android:layout_marginBottom="10dp"
+        />
+
+    <EditText
+        android:id="@+id/category"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:padding="5dp"
+        android:hint="category"
+        android:background="#ddd"
+        />
+
+    <Button
+        android:id="@+id/button_add"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:filterTouchesWhenObscured="true"
+        android:onClick="Add"
+        android:text="Add" />
+</LinearLayout>
