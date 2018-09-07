@@ -18,6 +18,12 @@ import java.net.Proxy;
 import java.net.URL;
 import java.nio.charset.Charset;
 
+import com.squareup.okhttp.MediaType;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
+
 /**
  * Created by maxdz on 5/23/2018.
  */
@@ -73,12 +79,13 @@ public class AsynkActions {
         protected String doInBackground(String... reqData) {
             // Create URL object
             URL url = createUrl(reqData[1]);
+            String Surl = reqData[1];okhttp
 
 
             // Perform HTTP request to the URL and receive a JSON response back
             String WordResponse = "";
             try {
-                WordResponse = makeHttpRequest(url, reqData[0],reqData[2]);
+                WordResponse = makeHttpRequest(Surl, reqData[0],reqData[2]);
             } catch (IOException e) {
                 // TODO Handle the IOException
             }
@@ -109,6 +116,32 @@ public class AsynkActions {
         /**
          * Make an HTTP request to the given URL and return a String as the response.
          */
+        private String makeHttpRequest(String url, String method, String postData) throws IOException {
+
+            OkHttpClient client = new OkHttpClient();
+            Request request;
+            MediaType PLAIN = MediaType.parse("text/plain; charset=utf-8");
+
+            Log.e(LOG_TAG, "Trying make a request: " + method + "" + url);
+
+            //Request request = new Request.Builder().url(url).build();
+
+
+            if (method == "POST"){
+                RequestBody body = RequestBody.create(PLAIN,postData);
+                request = new Request.Builder()
+                        .url(url)
+                        .post(body)
+                        .build();
+            }else {
+                request = new Request.Builder().url(url).build();
+            }
+            Response response = client.newCall(request).execute();
+            return response.body().string();
+        }
+
+
+
         private String makeHttpRequest(URL url, String method, String postData) throws IOException {
             String Response = "";
             HttpURLConnection urlConnection = null;
